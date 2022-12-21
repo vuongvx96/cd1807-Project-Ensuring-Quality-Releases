@@ -116,7 +116,7 @@ stages:
       displayName: Run Data Validation Tests
       continueOnError: true
       inputs:
-        script: 'newman run ./automatedtesting/postman/ValidationTest.json --reporters cli,junit --reporter-junit-export ./automatedtesting/postman/TEST-validation.xml'
+        script: 'newman run ValidationTest.json --reporters cli,junit --reporter-junit-export TEST-validation.xml'
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman Regression Test Suite    
     # ToDo: Update the command and verify the working directory
@@ -124,7 +124,7 @@ stages:
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script:  'newman run ./automatedtesting/postman/RegressionTest.json --reporters cli,junit --reporter-junit-export ./automatedtesting/postman/TEST-regression.xml'
+        script:  'newman run RegressionTest.json --reporters cli,junit --reporter-junit-export TEST-regression.xml'
         workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
     # Postman - Publish Results 
     # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
