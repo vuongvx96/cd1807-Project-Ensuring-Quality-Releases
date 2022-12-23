@@ -13,7 +13,7 @@ pool: Default
 variables:
   python.version: '3.7.6'
   # ToDo: Replace the service connection name as used in the DevOps project settings
-  azureServiceConnectionId: 'fdcca06d-bf2c-4d45-9784-b6bb2b2421f3'
+  azureServiceConnectionId: 'efa408fe-e007-4801-828e-fc8fd94e5097'
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
@@ -45,7 +45,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'Azuredevops'
-        backendAzureRmStorageAccountName: 'tfstate900031119'
+        backendAzureRmStorageAccountName: 'tfstate2606727689'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
@@ -203,6 +203,8 @@ stages:
               appName: myApplication-AppService
               appType: webApp
               package: '$(Pipeline.Workspace)/drop-fakerestapi/fakerestapi-$(Build.BuildId).zip'
+              deploymentMethod: zipDeploy
+
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
           # ToDo: Update the script below to install jmeter, unzip the jmeter test suite published zip artifact, and run the PerformanceTestSuite.  
