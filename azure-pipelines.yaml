@@ -15,7 +15,7 @@ pool: Default
 
 variables:
   python.version: '3.7.6'
-  azureServiceConnectionId: '66ae631b-4172-4366-a513-25cda0f2ae75'
+  azureServiceConnectionId: '3e2f8f38-5897-4cf5-8c84-5843861d2cbf'
   projectRoot: $(System.DefaultWorkingDirectory)
   environmentName: 'test'
 
@@ -71,7 +71,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'Azuredevops'
-        backendAzureRmStorageAccountName: 'tfstate2344032495'
+        backendAzureRmStorageAccountName: 'tfstate3165111377'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
@@ -175,9 +175,9 @@ stages:
               /usr/bin/chromedriver --version
               python3 -c "import selenium; print('Selenium Version:', selenium.__version__)"
               # Install Log Analytics agent on Linux computers (only need to run once)
-              # wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh
-              # sh onboard_agent.sh -w ${AZURE_LOG_ANALYTICS_ID} -s ${AZURE_LOG_ANALYTICS_PRIMARY_KEY}
-              # sudo /opt/microsoft/omsagent/bin/service_control restart ${AZURE_LOG_ANALYTICS_ID}
+              wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh
+              sh onboard_agent.sh -w ${AZURE_LOG_ANALYTICS_ID} -s ${AZURE_LOG_ANALYTICS_PRIMARY_KEY}
+              sudo /opt/microsoft/omsagent/bin/service_control restart ${AZURE_LOG_ANALYTICS_ID}
             env:  # To use secret variables in a script, we must explicitly map them as environment variables.
               AZURE_LOG_ANALYTICS_ID: $(AZURE_LOG_ANALYTICS_ID)
               AZURE_LOG_ANALYTICS_PRIMARY_KEY: $(AZURE_LOG_ANALYTICS_PRIMARY_KEY)
@@ -202,7 +202,7 @@ stages:
               ls -la
               sudo mkdir -p /var/log/selenium
               sudo chmod 664 /var/log/selenium
-              sudo python3 -u selenium-test.py 2>&1 | sudo tee -a /var/log/selenium/selenium-test.log
+              sudo python3 -u login.py 2>&1 | sudo tee -a /var/log/selenium/selenium-test.log
               # copy selenium log file to $(System.DefaultWorkingDirectory)/log/selenium/
               cd $(System.DefaultWorkingDirectory)
               mkdir -p log/selenium
