@@ -15,7 +15,7 @@ pool: Default
 
 variables:
   python.version: '3.7.6'
-  azureServiceConnectionId: '3e2f8f38-5897-4cf5-8c84-5843861d2cbf'
+  azureServiceConnectionId: 'ac3ff6e5-53c9-468d-8a89-5617a8c1ec1b'
   projectRoot: $(System.DefaultWorkingDirectory)
   environmentName: 'test'
 
@@ -71,7 +71,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'Azuredevops'
-        backendAzureRmStorageAccountName: 'tfstate3165111377'
+        backendAzureRmStorageAccountName: 'tfstate122131756'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
