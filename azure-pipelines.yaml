@@ -15,7 +15,7 @@ pool: Default
 
 variables:
   python.version: '3.7.6'
-  azureServiceConnectionId: 'afdc5075-c117-44f3-85ec-f35fc8ae2f52'
+  azureServiceConnectionId: 'b9cde7e5-0ab2-4eaf-8ef6-2d0232160d1a'
   projectRoot: $(System.DefaultWorkingDirectory)
   environmentName: 'test'
 
