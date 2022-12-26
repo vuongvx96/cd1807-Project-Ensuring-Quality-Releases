@@ -15,7 +15,7 @@ pool: Default
 
 variables:
   python.version: '3.7.6'
-  azureServiceConnectionId: 'ac3ff6e5-53c9-468d-8a89-5617a8c1ec1b'
+  azureServiceConnectionId: 'afdc5075-c117-44f3-85ec-f35fc8ae2f52'
   projectRoot: $(System.DefaultWorkingDirectory)
   environmentName: 'test'
 
@@ -71,7 +71,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'Azuredevops'
-        backendAzureRmStorageAccountName: 'tfstate122131756'
+        backendAzureRmStorageAccountName: 'tfstate173003331'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
@@ -141,7 +141,7 @@ stages:
             displayName: Deploy Azure WebApp
             inputs:
               azureSubscription: '$(azureServiceConnectionId)'
-              appName: myApplication-AppService
+              appName: vuongvx-fakerestapi-AppService
               appType: webApp
               package: '$(Pipeline.Workspace)/drop-fakerestapi/fakerestapi-$(Build.BuildId).zip'
               deploymentMethod: zipDeploy
